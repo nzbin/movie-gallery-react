@@ -25,9 +25,11 @@ html,body{
 	height:100%;
 	overflow:hidden;
 	background-color:#ddd;
+	perspective:1800px;
 	
 	@at-root{
-		.img-figure{
+		figure{
+			display:block;
 			position:absolute;
 			top:0;
 			left:0;
@@ -39,9 +41,12 @@ html,body{
 			background-color:#fff;
 			cursor:pointer;
 			transform-style:preserve-3d;
+			transform-origin:0 50%;
+			/*backface-visibility:hidden;*/
+			transition:all .6s ease-in-out;
 			
 			&.isInverse{
-				transform:rotateY(180deg);
+				transform:translate(320px) rotateY(180deg);
 			}
 			.img-wrap{
 				width:240px;
@@ -70,9 +75,10 @@ html,body{
 					padding:40px;
 					background:#fff;
 					text-align:left;
-					transform-style:preserve-3d;
+					transform-style:preserve-3d;		
 					transform:rotateY(180deg);
-					backface-visibility:hidden;
+					backface-visibility:hidden;					
+					z-Index:1;
 				}
 			}
 			
