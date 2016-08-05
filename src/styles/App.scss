@@ -46,7 +46,7 @@ html,body{
 			transition:all .6s ease-in-out;
 			
 			&.isInverse{
-				transform:translate(320px) rotateY(180deg);
+				transform:translate(320px) rotateY(-180deg);
 			}
 			.img-wrap{
 				width:240px;
@@ -76,7 +76,7 @@ html,body{
 					background:#fff;
 					text-align:left;
 					transform-style:preserve-3d;		
-					transform:rotateY(180deg);
+					transform:rotateY(-180deg);
 					backface-visibility:hidden;					
 					z-Index:1;
 				}
@@ -89,12 +89,30 @@ html,body{
 /* image -- end */
 
 /* controller -- start */
+
 .control-nav{
-	position:relative;
+	position:absolute;
+	left:0;
+	bottom:30px;
 	width:100%;
 	height:30px;
 	text-align:center;
 	z-index:101;
+	
+	@at-root{
+		.control-unit{
+			display:inline-block;
+			width:30px;
+			height:30px;
+			margin:0 5px;
+			text-align:center;
+			background:#aaa;
+			border-radius:50%;
+			cursor:pointer;
+		}
+		
+		
+	}
 }
 
 /* controller -- end */

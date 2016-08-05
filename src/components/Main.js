@@ -47,7 +47,7 @@ function getRotateRandom(deg){
 var ImgFigure = React.createClass ({
 	
 	/*
-	 *
+	 *imgFigure 的点击处理函数
 	 */
 	 handleClick:function(e){
 		 
@@ -99,6 +99,18 @@ var ImgFigure = React.createClass ({
 				</figcaption>
 			</figure>
 		);
+	}
+});
+
+//控制组件
+var ControlUnit = React.createClass({
+	handleClick : function(){
+		
+	},
+	render : function(){
+		return(
+			<span className="control-unit" onClick={this.handleClick}></span>
+		)
 	}
 });
 
@@ -313,7 +325,9 @@ class AppComponent extends React.Component {
 				}
 			}
 			
-			imgFigures.push(<ImgFigure data={value} ref={'imgFigure'+index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />)//犯了多个错误（T_T）
+			imgFigures.push(<ImgFigure data={value} ref={'imgFigure'+index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);//犯了多个错误（T_T）
+			
+			controlUnits.push(<ControlUnit />);
 			
 		}.bind(this));
 		  
