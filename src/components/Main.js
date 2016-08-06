@@ -104,12 +104,31 @@ var ImgFigure = React.createClass ({
 
 //控制组件
 var ControlUnit = React.createClass({
-	handleClick : function(){
+	handleClick : function(e){
 		
+		if(this.props.arrange.isCenter){
+			this.props.inverse();
+		}else{
+			this.props.center();
+		}
+		 
+		 e.stopPropagation();
+		 e.preventDefault();
 	},
 	render : function(){
+		
+		var controlUnitClassName = 'control-unit';
+		//显示居中态按钮
+		if(this.props.arrange.isCenter){
+			controlUnitClassName +=' is-center';
+			//显示反转态按钮
+			if(this.props.arrange.isInverse){
+				controlUnitClassName +=' is-inverse';
+			}
+		}
+		
 		return(
-			<span className="control-unit" onClick={this.handleClick}></span>
+			<span className={controlUnitClassName} onClick={this.handleClick}></span>
 		)
 	}
 });
@@ -325,9 +344,9 @@ class AppComponent extends React.Component {
 				}
 			}
 			
-			imgFigures.push(<ImgFigure data={value} ref={'imgFigure'+index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);//犯了多个错误（T_T）
+			imgFigures.push(<ImgFigure key={index} data={value} ref={'imgFigure'+index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)} />);//犯了多个错误（T_T）
 			
-			controlUnits.push(<ControlUnit />);
+			controlUnits.push(<ControlUnit key={index} arrange={this.state.imgsArrangeArr[index]} inverse={this.inverse(index)} center={this.center(index)}/>);
 			
 		}.bind(this));
 		  
