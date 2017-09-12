@@ -52,7 +52,7 @@
     "karma-webpack": "^1.7.0",
     "minimist": "^1.2.0",
     "mocha": "^2.2.5",
-    "node-sass": "^3.4.2",
+    "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "open": "0.0.5",
     "phantomjs-prebuilt": "^2.0.0",

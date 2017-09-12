@@ -1,166 +1,153 @@
-@font-face{
-	font-family:"icons";
-	src:url("../fonts/icons/icons.eot") format("eot"),url("../fonts/icons/icons.svg") format("svg"),url("../fonts/icons/icons.ttf") format("ttf"),url("../fonts/icons/icons.woff") format("woff");
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons/icons.eot") format("eot"),
+  url("../fonts/icons/icons.svg") format("svg"),
+  url("../fonts/icons/icons.ttf") format("ttf"),
+  url("../fonts/icons/icons.woff") format("woff");
 }
 
-html,body{
-	width:100%;
-	height:100%;
-	background-color:#eee;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
 }
-.app{
-	width:100%;
-	height:100%;
+
+.app {
+  width: 100%;
+  height: 100%;
 }
+
 
 /* stage -- start */
-.stage{
-	position:relative;
-	width:100%;
-	height:650px;
-}
 
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
 /* stage -- end */
 
-/* image -- start */
-.img-sec{
-	position:relative;
-	width:100%;
-	height:100%;
-	overflow:hidden;
-	background-color:#ddd;
-	perspective:1800px;
-	
-	@at-root{
-		figure{
-			display:block;
-			position:absolute;
-			top:0;
-			left:0;
-			width:320px;
-			height:360px;
-			margin:0;
-			padding:40px;
-			box-sizing:border-box;
-			background-color:#fff;
-			cursor:pointer;
-			transform-style:preserve-3d;
-			transform-origin:0 50%;
-			/*backface-visibility:hidden;*/
-			transition:all .6s ease-in-out;
-			
-			&.isInverse{
-				transform:translate(320px) rotateY(-180deg);
-			}
-			.img-wrap{
-				width:240px;
-				height:240px;
-				overflow:hidden;
-				
-				img{
-					width:100%;
-				}
-			}
-			
-			figcaption{
-				text-align:center;
-				.img-title{
-					margin:20px 0 0 0;
-					font-size:16px;
-					color:#a7a0a2;
-				}
-				.img-back{
-					position:absolute;
-					top:0;
-					left:0;
-					width:100%;
-					height:100%;
-					box-sizing:border-box;
-					padding:40px;
-					background:#fff;
-					text-align:left;
-					transform-style:preserve-3d;		
-					transform:rotateY(180deg) translateZ(1px);/*修复chrome浏览器反向旋转bug*/
-					backface-visibility:hidden;					
 
-				}
-			}
-			
-		}
-	}
+/* image -- start */
+
+.img-sec {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ddd;
+  perspective: 1800px;
+
+  @at-root {
+    figure {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 320px;
+      height: 360px;
+      margin: 0;
+      padding: 40px;
+      box-sizing: border-box;
+      background-color: #fff;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform-origin: 0 50%;
+      /*backface-visibility:hidden;*/
+      transition: all .6s ease-in-out;
+
+      &.isInverse {
+        transform: translate(320px) rotateY(-180deg);
+      }
+      .img-wrap {
+        width: 240px;
+        height: 240px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      figcaption {
+        text-align: center;
+        .img-title {
+          margin: 20px 0 0 0;
+          font-size: 16px;
+          color: #a7a0a2;
+        }
+        .img-back {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          padding: 40px;
+          background: #fff;
+          text-align: left;
+          transform-style: preserve-3d;
+          transform: rotateY(180deg) translateZ(1px);
+          /*修复chrome浏览器反向旋转bug*/
+          backface-visibility: hidden;
+        }
+      }
+    }
+  }
 }
+
 
 /* image -- end */
 
+
 /* controller -- start */
 
-.control-nav{
-	position:absolute;
-	left:0;
-	bottom:30px;
-	width:100%;
-	height:30px;
-	text-align:center;
-	z-index:101;
-	
-	@at-root{
-		.control-unit{
-			display:inline-block;
-			width:30px;
-			height:30px;
-			margin:0 5px;
-			text-align:center;
-			background:#aaa;
-			border-radius:50%;
-			cursor:pointer;
-			vertical-align:middle;	
-			transform:scale(.5);
-			transition:all .6s ease-in-out;
-			
-			&.is-center{
-				background:#888;
-				transform:scale(1);
-				
-					&::after{
-						content:"\e600";
-						font-family:"icons";
-						display:inline-block;
-						height:30px;
-						line-height:30px;
-						color:#fff;
-						
-					}
-					
-					&.is-inverse{
-						background:#555;
-						transform:rotateY(180deg);
-						
-					}
-			}
-			
-		}
+.control-nav {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  z-index: 101;
 
-		
-		
-	}
+  @at-root {
+    .control-unit {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      text-align: center;
+      background: #aaa;
+      border-radius: 50%;
+      cursor: pointer;
+      vertical-align: middle;
+      transform: scale(.5);
+      transition: all .6s ease-in-out;
+
+      &.is-center {
+        background: #888;
+        transform: scale(1);
+
+        &::after {
+          content: "\e600";
+          font-family: "icons";
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          color: #fff;
+        }
+
+        &.is-inverse {
+          background: #555;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
 }
 
+
 /* controller -- end */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
