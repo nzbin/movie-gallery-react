@@ -1,4 +1,7 @@
-# imooc-ScatteredPolaroidsGallery-by-react
-This is the ScatteredPolaroidsGallery made by react.
+# 电影画廊 React 版
 
-demo: [https://nzbin.github.io/imooc-ScatteredPolaroidsGallery-by-react](https://nzbin.github.io/imooc-ScatteredPolaroidsGallery-by-react)
+慕课网图片画廊 React 版案例。
+
+组件改用 ES6 编写。
+
+
