@@ -103,7 +103,7 @@ class ImgFigure extends React.Component {
       </figure>
     );
   }
-};
+}
 
 //控制组件
 class ControlUnit extends React.Component {
@@ -141,7 +141,7 @@ class ControlUnit extends React.Component {
       <span className={controlUnitClassName} onClick={this.handleClick}></span>
     )
   }
-};
+}
 
 //主组件
 class AppComponent extends React.Component {
@@ -374,7 +374,6 @@ class AppComponent extends React.Component {
   }
 }
 
-AppComponent.defaultProps = {
-};
+AppComponent.defaultProps = {};
 
 export default AppComponent;
